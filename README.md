@@ -85,10 +85,10 @@ By default, typescript is set to strict mode. This can be disabled in _tsconfig.
 ```json
 {
   "compilerOptions": {
-    ...
-    "strict": false,
-    ...
-  },
+    // ... Other configs
+    "strict": false
+    // ...
+  }
 }
 ```
 
