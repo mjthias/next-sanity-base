@@ -1,34 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next-Sanity Base Template
 
-## Getting Started
+## Setup guide
 
-First, run the development server:
+1. #### Deploy NextJS template to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
+
+<!-- Variables -->
+
+[vercel-deploy]: https://vercel.com/new/clone?repository-url=https://github.com/mjthias/next-sanity-base&repository-name=next-sanity-base&project-name=next-sanity-base&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx
+
+NOTE:
+This will create a new _Next.js repo_, _Vercel project_ and _Sanity studio_.<br>
+Sanity env variables will automatically be accessable by the Vercel project. <br><br>
+Clone the new github app repo.
+
+2. #### Install dependencies (App):
+
+```bash
+pnpm install
+```
+
+3. #### Create _.env_ file (App)
+   Copy the .env.local.example file to .env.local and update the values.
+
+```yaml
+# .env.local.example
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET='production'
+NEXT_PUBLIC_SANITY_API_VERSION='2023-07-14'
+NEXT_PUBLIC_SANITY_PREVIEW_TOKEN='1ee7bc5c-32df-4873-b698-a89db92a9e66'
+```
+
+4. #### Run environment (App)
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. #### Clone Sanity base template (Studio)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+git clone https://github.com/mjthias/sanity-base.git .
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+6. #### Remove git connection, and connect to new repo (Studio)
 
-## Learn More
+Remove the git connection to the template repo by deleting the .git directory
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+sudo rm -r .git
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create and connect to a new repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+7. #### Create .env file (Studio)
+   Copy the .env.local.example file to .env.local and update the values.
 
-## Deploy on Vercel
+```yaml
+# .env.local.example
+SANITY_STUDIO_PROJECT_TITLE=
+SANITY_STUDIO_PROJECT_ID=
+SANITY_STUDIO_DATASET='production'
+SANITY_STUDIO_USE_CDN=true
+SANITY_STUDIO_LOCAL_PREVIEW_HOST='localhost:3000'
+SANITY_STUDIO_PRODUCTION_PREVIEW_HOST=
+SANITY_STUDIO_PREVIEW_TOKEN='1ee7bc5c-32df-4873-b698-a89db92a9e66'
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+8. #### Deploy studio (Studio)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm run deploy
+```
+
+## Environment settings
+
+The following settings are the standard of the next-sanity template.<br> Please make sure to not change these when patching the template.
+
+### Typescript
+
+By default, typescript is set to strict mode. This can be disabled in _tsconfig.json_:
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "strict": false,
+    ...
+  },
+}
+```
+
+Hereby vanilla non-typed JS is allowed within TS(X) files
+
+### Prettier linting
+
+The environment is linted using the settings within _.prettierrc_, which will owerwrite the Prettier config of your IDE.
