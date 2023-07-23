@@ -13,7 +13,7 @@ export const pageQuery = groq`
 `
 
 export const frontPageQuery = groq`
-*[_type == "frontpage" && defined(slug.current)][0] {
+*[_type == "frontpage"][0] {
     ...,
 }
 `

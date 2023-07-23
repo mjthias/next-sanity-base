@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url) // Get params
-  console.log('sjlkajlskd')
 
   // Validate .env preview token
   const token = searchParams.get('token')

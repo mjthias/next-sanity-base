@@ -4,7 +4,7 @@ import { QueryParams, SanityDocument } from 'next-sanity'
 import PageContent from '../PageContent'
 import ExitPreview from './ExitPreview'
 
-interface PreviewPageProps {
+type PreviewPageProps = {
   initData: SanityDocument
   preview: boolean
   query: string
