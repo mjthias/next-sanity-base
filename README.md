@@ -83,6 +83,7 @@ The following settings are the standard of the next-sanity template.<br> Please 
 By default, typescript is set to strict mode. This can be disabled in _tsconfig.json_:
 
 ```json
+// tsconfig.json
 {
   "compilerOptions": {
     // ... Other configs
