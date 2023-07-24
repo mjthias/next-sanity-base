@@ -2,7 +2,7 @@
 
 ## Setup guide
 
-1. #### Deploy NextJS template to Vercel
+#### 1. Deploy NextJS template to Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
 
@@ -11,18 +11,22 @@
 [vercel-deploy]: https://vercel.com/new/clone?repository-url=https://github.com/mjthias/next-sanity-base&repository-name=next-sanity-base&project-name=next-sanity-base&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx
 
 NOTE:
-This will create a new _Next.js repo_, _Vercel project_ and _Sanity studio_.<br>
-Sanity env variables will automatically be accessable by the Vercel project. <br><br>
+This will create a new _Next.js repo_, _Vercel project_ and _Sanity studio_. Sanity env variables will automatically be accessable by the Vercel project. <br><br>
 Clone the new github app repo.
 
-2. #### Install dependencies (App):
+---
+
+#### 2. Install dependencies (App):
 
 ```bash
 pnpm install
 ```
 
-3. #### Create _.env_ file (App)
-   Copy the .env.local.example file to .env.local and update the values.
+---
+
+#### 3. Create _.env_ file (App)
+
+Copy the .env.local.example file to .env.local and update the values.
 
 ```yaml
 # .env.local.example
@@ -32,19 +36,25 @@ NEXT_PUBLIC_SANITY_API_VERSION='2023-07-14'
 NEXT_PUBLIC_SANITY_PREVIEW_TOKEN='1ee7bc5c-32df-4873-b698-a89db92a9e66'
 ```
 
-4. #### Run environment (App)
+---
+
+#### 4. Run environment (App)
 
 ```bash
 npm run dev
 ```
 
-5. #### Clone Sanity base template (Studio)
+---
+
+#### 5. Clone Sanity base template (Studio)
 
 ```bash
 git clone https://github.com/mjthias/sanity-base.git .
 ```
 
-6. #### Remove git connection, and connect to new repo (Studio)
+---
+
+#### 6. Remove git connection, and connect to new repo (Studio)
 
 Remove the git connection to the template repo by deleting the .git directory
 
@@ -54,8 +64,11 @@ sudo rm -r .git
 
 Create and connect to a new repository
 
-7. #### Create .env file (Studio)
-   Copy the .env.local.example file to .env.local and update the values.
+---
+
+#### 7. Create .env file (Studio)
+
+Copy the .env.local.example file to .env.local and update the values.
 
 ```yaml
 # .env.local.example
@@ -68,11 +81,15 @@ SANITY_STUDIO_PRODUCTION_PREVIEW_HOST=
 SANITY_STUDIO_PREVIEW_TOKEN='1ee7bc5c-32df-4873-b698-a89db92a9e66'
 ```
 
-8. #### Deploy studio (Studio)
+---
+
+#### 8. Deploy studio (Studio)
 
 ```bash
 pnpm run deploy
 ```
+
+---
 
 ## Environment settings
 
