@@ -13,7 +13,7 @@ export function getClient(preview?: boolean): SanityClient {
     dataset,
     apiVersion,
     perspective: 'published',
-    useCdn: false,
+    useCdn: true,
   })
   if (preview) {
     return client.withConfig({
