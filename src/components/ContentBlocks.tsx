@@ -1,12 +1,11 @@
-import { ReactNode } from 'react'
 import * as Blocks from './blocks'
-import { SanityDocument } from 'next-sanity'
 
-export default function ContentBlocks({ blocks }: any): ReactNode {
+export default function ContentBlocks({ blocks }: { blocks: Array<object> }) {
   return (
     <>
-      {blocks.map((block: SanityDocument, idx: Number): ReactNode => {
+      {blocks.map((block: any, idx: Number) => {
         const Block = resolveBlocks(block)
+        console.log(block)
         if (!Block) {
           return <div key={block._key}>Missing block: {upperFirst(block._type)}</div>
         }
@@ -17,9 +16,7 @@ export default function ContentBlocks({ blocks }: any): ReactNode {
 }
 
 type BlockComponents = Record<string, React.FunctionComponent<any>>
-type BlockComponent = React.FunctionComponent<any> | null
-
-function resolveBlocks(block: SanityDocument): BlockComponent {
+function resolveBlocks(block: any) {
   const Block = (Blocks as BlockComponents)[upperFirst(block._type)]
   if (Block) return Block
 
@@ -27,6 +24,6 @@ function resolveBlocks(block: SanityDocument): BlockComponent {
   return null
 }
 
-function upperFirst(string: string): string {
+function upperFirst(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }

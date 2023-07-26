@@ -1,6 +1,6 @@
 import { draftMode } from 'next/headers'
 import { getClient } from '@/lib/sanity/client'
-import { frontPageQuery } from '@/lib/queries'
+import { frontPageQuery } from '@/lib/sanity/queries'
 import PreviewPageContent from '@/components/preview/PreviewPageContent'
 import { genMetaObject } from '@/lib/helpers'
 

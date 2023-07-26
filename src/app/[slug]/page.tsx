@@ -1,15 +1,15 @@
 import { draftMode } from 'next/headers'
 import PreviewPageContent from '@/components/preview/PreviewPageContent'
-import { pageQuery, pagesPathQuery } from '@/lib/queries'
+import { pageQuery, pageSlugsQuery } from '@/lib/sanity/queries'
 import { getClient } from '@/lib/sanity/client'
 import { genMetaObject } from '@/lib/helpers'
 
-type Props = {
+interface Props {
   params: { slug: string }
 }
 
 export async function generateStaticParams() {
-  const pages = await getClient().fetch(pagesPathQuery)
+  const pages = await getClient().fetch(pageSlugsQuery)
   return pages
 }
 
