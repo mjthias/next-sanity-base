@@ -4,7 +4,7 @@ import { pageQuery, pageSlugsQuery } from '@/lib/sanity/queries'
 import { getClient } from '@/lib/sanity/client'
 import { genMetaObject } from '@/lib/helpers'
 
-interface Props {
+type Props = {
   params: { slug: string }
 }
 
