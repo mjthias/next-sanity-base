@@ -41,6 +41,7 @@ function ExternalLink(props: PortableTextMarkComponentProps) {
   )
 }
 
+// Portable text helpers
 function resolveUrl(url: string) {
   if (!url.startsWith('http') && !url.startsWith('tel') && !url.startsWith('mailto')) {
     return `https://${url}`
